@@ -7,7 +7,7 @@ import App from './App.vue'
 import router from './router'
 import '@/styles/common.scss'
 
-import './assets/main.css'
+// import './assets/main.css'
 
 import { getCategory } from '@/apis/testAPI'
 getCategory().then(res => {

@@ -17,3 +17,8 @@ httpInstance.interceptors.response.use(res => res.data, e => {
 })
 
 export default httpInstance
+
+
+// 如果项目里面不同的业务模块需要的接口基址不同
+// 可以创建多个axios实例
+// 每个实例可以配置不同的baseURL

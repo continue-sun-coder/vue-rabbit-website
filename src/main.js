@@ -9,12 +9,6 @@ import '@/styles/common.scss'
 
 // import './assets/main.css'
 
-import { getCategory } from '@/apis/testAPI'
-getCategory().then(res => {
-  console.log(res)
-})
-
-
 
 const app = createApp(App)
 

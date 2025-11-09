@@ -8,18 +8,18 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <!-- <el-button type="primary">Primary</el-button> -->
 
-  <div class="test-color">
+  <!-- <div class="test-color">
     test
-  </div>
+  </div> -->
 
   <!-- 一级路由出口 -->
   <RouterView />
 </template>
 
 <style scoped lang="scss">
-.test-color {
-  color: $warnColor;
-}
+// .test-color {
+//   color: $warnColor;
+// }
 
 header {
   line-height: 1.5;

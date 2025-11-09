@@ -19,7 +19,7 @@ import HomePanel from './components/HomePanel.vue'
     <HomeNew />
     <HomeHot />
     <HomeProduct />
-
+1
 </template>
 
 <style scoped lang="scss">

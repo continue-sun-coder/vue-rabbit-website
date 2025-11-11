@@ -1,44 +1,68 @@
-# vue-myrabbit1
+# 🐰 小兔鲜 - Vue 3 购物网站
 
-This template should help get you started developing with Vue 3 in Vite.
+一个基于 Vue 3 开发的现代化电商前端项目，专注于生鲜食品购物体验。
 
-## Recommended IDE Setup
+## 📁 项目结构
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+```bash
+vue-myrabbit1/
+├── src/
+│   ├── components/     # 公共组件
+│   ├── views/         # 页面组件
+│   ├── router/        # 路由配置
+│   ├── assets/        # 静态资源
+│   ├── App.vue
+│   └── main.js
+├── public/            # 公共文件
+└── package.json       # 项目配置
+```
 
-## Recommended Browser Setup
+## ✨ 项目特色
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- 🛒 完整的购物流程体验
+- 🎯 一级分类路由跳转
+- 📱 响应式页面设计
+- ⚡ Vue 3 + Composition API
+- 🎨 现代化 UI 界面
 
-## Customize configuration
+## 🚀 功能特性
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### 已实现功能
+- [x] 商品分类导航
+- [x] 路由页面跳转
+- [x] 商品列表展示
+- [x] 页面数据渲染
 
-## Project Setup
+### 计划功能
+- [ ] 购物车管理
+- [ ] 用户登录注册
+- [ ] 商品搜索筛选
+- [ ] 订单管理系统
 
-```sh
+## 🛠 技术栈
+
+- **前端框架**: Vue 3
+- **路由管理**: Vue Router
+- **构建工具**: Vite
+- **开发语言**: JavaScript
+- **包管理器**: npm
+
+## 📦 安装与运行
+
+### 环境要求
+- Node.js 16+ 
+- npm 或 yarn
+
+### 启动项目
+```bash
+# 安装依赖
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# 开发模式运行
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
+# 构建生产版本
 npm run build
-```
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+# 代码检查
 npm run lint
-```

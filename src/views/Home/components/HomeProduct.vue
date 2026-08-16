@@ -1,15 +1,15 @@
 <script setup>
 import HomePanel from './HomePanel.vue'
 import { getGoodsAPI } from '@/apis/home'
-import { ref, onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import GoodsItem from './GoodsItem.vue'
-
+// 获取数据列表
 const goodsProduct = ref([])
 const getGoods = async () => {
-  const { result } = await getGoodsAPI()
-  goodsProduct.value = result
+  const res = await getGoodsAPI()
+  goodsProduct.value = res.result
 }
-onMounted( ()=> getGoods() )
+onMounted(() => getGoods())
 </script>
 
 <template>
@@ -17,16 +17,15 @@ onMounted( ()=> getGoods() )
     <HomePanel :title="cate.name" v-for="cate in goodsProduct" :key="cate.id">
       <div class="box">
         <RouterLink class="cover" to="/">
-          <img v-img-lazy="cate.picture" alt="" />
+          <img v-img-lazy="cate.picture" />
           <strong class="label">
             <span>{{ cate.name }}馆</span>
             <span>{{ cate.saleInfo }}</span>
           </strong>
         </RouterLink>
         <ul class="goods-list">
-          <li v-for="good in cate.goods" :key="good.id">
-            <!-- 为什么goods="goods"会报错 -->
-            <GoodsItem :goods="good" />
+          <li v-for="goods in cate.goods" :key="goods.id">
+            <GoodsItem :goods="goods" />
           </li>
         </ul>
       </div>
@@ -38,6 +37,7 @@ onMounted( ()=> getGoods() )
 .home-product {
   background: #fff;
   margin-top: 20px;
+
   .sub {
     margin-bottom: 2px;
 
@@ -120,6 +120,8 @@ onMounted( ()=> getGoods() )
         }
       }
     }
+
+
   }
 }
 </style>

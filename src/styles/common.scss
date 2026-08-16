@@ -41,9 +41,7 @@ input[type='checkbox'] {
   padding: 0;
   outline: none;
   border: none;
-  -webkit-appearance: none;  /* Webkit 浏览器 */
-  -moz-appearance: none;     /* Firefox */
-  appearance: none;          /* 标准属性 */
+  -webkit-appearance: none;
   &::placeholder {
     color: #ccc;
   }
@@ -80,8 +78,6 @@ ul {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  // 兼容非-webkit内核浏览器
-  line-clamp: 2;
   overflow: hidden;
 }
 

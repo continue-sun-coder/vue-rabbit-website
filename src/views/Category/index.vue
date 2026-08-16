@@ -1,42 +1,10 @@
 <script setup>
-import { getCategoryAPI } from '@/apis/category'
-import {useRoute} from 'vue-router'
-import { onMounted, ref } from 'vue'
-import { getBannerAPI } from '@/apis/home'
+
 import GoodsItem from '../Home/components/GoodsItem.vue'
-import {onBeforeRouteUpdate} from 'vue-router'
-
-const categoryData = ref({})
-const route = useRoute()
-const getCategory = async (id = route.params.id) => {
-    const res = await getCategoryAPI(id)
-    categoryData.value = res.result
-}
-
-// 路由参数变化时，更新分类数据
-onBeforeRouteUpdate((to)=>{
-    console.log('route change')
-    console.log(to)
-    getCategory(to.params.id)
-})
-
-onMounted(() => {
-    getCategory()
-})
-
-const bannerList = ref([])
-
-const getBanner = async () => {
-    const res = await getBannerAPI({
-        distributionSite: '2'
-    })
-    console.log(res)
-    bannerList.value = res.result
-}
-
-onMounted(() => {
-    getBanner()
-})
+import { useBanner } from './composables/useBanner'
+import { useCategory } from './composables/useCategory'
+const { bannerList } = useBanner()
+const { categoryData } = useCategory()
 
 
 </script>
@@ -166,6 +134,7 @@ onMounted(() => {
   width: 1240px;
   height: 500px;
   margin: 0 auto;
+
 
   img {
     width: 100%;

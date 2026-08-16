@@ -1,68 +1,44 @@
-# 🐰 小兔鲜 - Vue 3 购物网站
+# 小兔鲜 vue-rabbit
 
-一个基于 Vue 3 开发的现代化电商前端项目，专注于生鲜食品购物体验。
+基于 Vue 3 的电商前台项目，覆盖首页浏览、分类、详情、购物车、登录、结算、支付和会员中心。
 
-## 📁 项目结构
+仓库：[continue-sun-coder/vue-rabbit-website](https://github.com/continue-sun-coder/vue-rabbit-website)
 
-```bash
-vue-myrabbit1/
-├── src/
-│   ├── components/     # 公共组件
-│   ├── views/         # 页面组件
-│   ├── router/        # 路由配置
-│   ├── assets/        # 静态资源
-│   ├── App.vue
-│   └── main.js
-├── public/            # 公共文件
-└── package.json       # 项目配置
+## 技术栈
+
+- Vue 3 + Vite
+- Vue Router
+- Pinia（含持久化）
+- Element Plus
+- Axios
+- Sass
+
+## 功能
+
+- 首页：分类导航、轮播、新鲜好物、人气推荐
+- 分类 / 二级分类、商品详情
+- 购物车、结算、支付宝支付回调
+- 登录、会员中心、订单列表
+
+商品分类、轮播和商品数据来自黑马小兔鲜接口：
+
+`http://pcapi-xiaotuxian-front-devtest.itheima.net`
+
+## 运行
+
+```sh
+npm install
+npm run dev
 ```
 
-## ✨ 项目特色
+浏览器打开终端里提示的本地地址（端口被占用时可能是 `http://localhost:5174/`）。
 
-- 🛒 完整的购物流程体验
-- 🎯 一级分类路由跳转
-- 📱 响应式页面设计
-- ⚡ Vue 3 + Composition API
-- 🎨 现代化 UI 界面
-
-## 🚀 功能特性
-
-### 已实现功能
-- [x] 商品分类导航
-- [x] 路由页面跳转
-- [x] 商品列表展示
-- [x] 页面数据渲染
-
-### 计划功能
-- [ ] 购物车管理
-- [ ] 用户登录注册
-- [ ] 商品搜索筛选
-- [ ] 订单管理系统
-
-## 🛠 技术栈
-
-- **前端框架**: Vue 3
-- **路由管理**: Vue Router
-- **构建工具**: Vite
-- **开发语言**: JavaScript
-- **包管理器**: npm
-
-## 📦 安装与运行
-
-### 环境要求
-- Node.js 16+ 
-- npm 或 yarn
-
-### 启动项目
-```bash
-# 安装依赖
-npm install
-
-# 开发模式运行
-npm run dev
-
-# 构建生产版本
+```sh
 npm run build
-
-# 代码检查
+npm run preview
 npm run lint
+```
+
+## 开发建议
+
+VS Code + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)（禁用 Vetur）。

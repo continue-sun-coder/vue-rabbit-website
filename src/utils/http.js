@@ -1,24 +1,34 @@
+// axios基础的封装
 import axios from 'axios'
-
-// 创建axios实例
+import { ElMessage } from 'element-plus'
+import { useUserStore } from '@/stores/userStore'
 const httpInstance = axios.create({
-  baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
-  timeout: 5000
+  baseURL: 'https://pcapi-xiaotuxian-front-devtest.itheima.net',
+  timeout: 10000
 })
+
+// 拦截器
 
 // axios请求拦截器
 httpInstance.interceptors.request.use(config => {
+  // 1. 从pinia获取token数据
+  const userStore = useUserStore()
+  // 2. 按照后端的要求拼接token数据
+  const token = userStore.userInfo.token
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`
+  }
   return config
 }, e => Promise.reject(e))
 
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
+  ElMessage({
+    type: 'warning',
+    message: e.response?.data?.message || e.message || '网络异常'
+  })
   return Promise.reject(e)
 })
 
+
 export default httpInstance
-
-
-// 如果项目里面不同的业务模块需要的接口基址不同
-// 可以创建多个axios实例
-// 每个实例可以配置不同的baseURL

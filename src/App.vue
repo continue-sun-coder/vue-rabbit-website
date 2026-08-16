@@ -1,26 +1,13 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
-// 使用@仅仅只是起一个联想提示的作用，并不是进行了路径转换
-// 实际路径转换还是需要依赖于打包工具（例如Vite、Webpack等）来完成clear
+
 </script>
 
 <template>
-  <!-- <el-button type="primary">Primary</el-button> -->
-
-  <!-- <div class="test-color">
-    test
-  </div> -->
-
-  <!-- 一级路由出口 -->
+  <!-- 一级路由出口组件 -->
   <RouterView />
 </template>
 
 <style scoped lang="scss">
-// .test-color {
-//   color: $warnColor;
-// }
-
 header {
   line-height: 1.5;
   max-height: 100vh;

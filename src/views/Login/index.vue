@@ -15,7 +15,7 @@ const userStore = useUserStore()
 
 // 1. 准备表单对象
 const form = ref({
-  account: '18610848230',
+  account: 'xiaotuxian001',
   password: '123456',
   agree: true
 })
@@ -56,12 +56,13 @@ const doLogin = () => {
     console.log(valid)
     // 以valid做为判断条件 如果通过校验才执行登录逻辑
     if (valid) {
-      // TODO LOGIN
-      await userStore.getUserInfo({ account, password })
-      // 1. 提示用户
-      ElMessage({ type: 'success', message: '登录成功' })
-      // 2. 跳转首页
-      router.replace({ path: '/' })
+      try {
+        await userStore.getUserInfo({ account, password })
+        ElMessage({ type: 'success', message: '登录成功' })
+        router.replace({ path: '/' })
+      } catch (err) {
+        console.error(err)
+      }
     }
   })
 }

@@ -13,15 +13,19 @@ export const useUserStore = defineStore('user', () => {
   const getUserInfo = async ({ account, password }) => {
     const res = await loginAPI({ account, password })
     userInfo.value = res.result
-    // 合并购物车的操作
-    await mergeCartAPI(cartStore.cartList.map(item => {
-      return {
+    try {
+      const localCart = cartStore.cartList.map(item => ({
         skuId: item.skuId,
         selected: item.selected,
         count: item.count
+      }))
+      if (localCart.length) {
+        await mergeCartAPI(localCart)
       }
-    }))
-    cartStore.updateNewList()
+      await cartStore.updateNewList()
+    } catch (err) {
+      console.warn('登录成功，但同步购物车失败', err)
+    }
   }
 
   // 退出时清除用户信息

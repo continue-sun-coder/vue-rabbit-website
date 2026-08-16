@@ -3,8 +3,8 @@ import axios from 'axios'
 import { ElMessage } from 'element-plus'
 import { useUserStore } from '@/stores/userStore'
 const httpInstance = axios.create({
-  baseURL: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
-  timeout: 5000
+  baseURL: 'https://pcapi-xiaotuxian-front-devtest.itheima.net',
+  timeout: 10000
 })
 
 // 拦截器
@@ -23,10 +23,9 @@ httpInstance.interceptors.request.use(config => {
 
 // axios响应式拦截器
 httpInstance.interceptors.response.use(res => res.data, e => {
-  // 统一错误提示
   ElMessage({
     type: 'warning',
-    message: e.response.data.message
+    message: e.response?.data?.message || e.message || '网络异常'
   })
   return Promise.reject(e)
 })
